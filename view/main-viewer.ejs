@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/main.css" />
+		<title>Narenj.dev</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<a href="/">
+					<img src="/styles/files/Logo.png" alt="Logo" />
+				</a>
+			</div>
+			<div class="profile">
+				<div class="photo">
+					<img
+						src="/uploads/profiles/<%=profile%>"
+						alt="Profile photo"
+					/>
+				</div>
+				<div class="user">
+					<a href="/dashboard"><%= username %></a>
+					<sub
+						>(
+						<span>
+							<%if(admin){%>
+							<a href="/admin/logout">Log Out</a>
+							<%}else{%>
+							<a href="/user-logout">Log Out</a>
+							<% } %>
+						</span>
+						)</sub
+					>
+				</div>
+			</div>
+			<div class="search">
+				<form action="/search" method="POST">
+					<input
+						type="text"
+						name="s"
+						placeholder="Search ..."
+						required
+					/>
+				</form>
+			</div>
+		</div>
+
+		<div class="body">
+			<div class="container">
+				<!--  -->
+				<%
+                let postss = posts.reverse();
+                postss.forEach(function(post){ %>
+				<div class="card" data-id="<%= post._id%>">
+					<div class="photo">
+						<img
+							src="/uploads/posters/<%= post.poster%>"
+							alt="photo"
+						/>
+					</div>
+					<div class="info">
+						<div class="title"><%= post.title %></div>
+						<hr />
+						<div class="desc"><%=post.description %></div>
+						<div class="actions">
+							<% if(admin){%>
+							<a
+								href="/delete-post?id=<%=post._id%>"
+								class="btn delete"
+								>delete</a
+							>
+							<%}%>
+							<a
+								href="/get-file?id=<%= post._id%>"
+								class="btn download"
+								>download</a
+							>
+						</div>
+					</div>
+				</div>
+				<%}) %>
+			</div>
+		</div>
+	</body>
+</html>

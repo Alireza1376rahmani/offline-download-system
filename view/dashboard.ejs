@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles/main.css" />
+		<link rel="stylesheet" href="/styles/dashboard.css" />
+		<title>Dashboard</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<a href="/">
+					<img src="styles/files/Logo.png" alt="Logo" />
+				</a>
+			</div>
+			<div class="profile">
+				<div class="photo">
+					<img
+						src="/uploads/profiles/<%=profile%>"
+						alt="Profile photo"
+					/>
+				</div>
+				<div class="user">
+					<a href="/dashboard">Rabali hastam</a>
+					<sub
+						>(
+						<span><a href="/user-logout">Log out</a></span> )</sub
+					>
+				</div>
+			</div>
+			<div class="search">
+				<form action="/search" method="POST">
+					<input
+						type="text"
+						name="s"
+						placeholder="Search ..."
+						required
+					/>
+				</form>
+			</div>
+		</div>
+
+		<div class="body">
+			<div class="container">
+				<div class="forms">
+					<div class="form change-profile-form">
+						<h2>Chang profile</h2>
+						<form
+							action="/upload-profile"
+							method="POST"
+							enctype="multipart/form-data"
+						>
+							<label for="profile">Upload an image</label>
+							<input type="file" name="profile" id="profile" />
+							<input type="submit" />
+						</form>
+					</div>
+					<div class="form new-post-form">
+						<h2>Create new post :</h2>
+						<form
+							action="/post-new"
+							method="POST"
+							enctype="multipart/form-data"
+						>
+							<!-- title -->
+							<!-- <label for="title">title : </label> -->
+							<input
+								type="text"
+								name="title"
+								id="title"
+								placeholder="Title"
+								required
+							/>
+							<!-- description -->
+							<!-- <label for="description">description : </label> -->
+							<input
+								type="text"
+								name="description"
+								id="description"
+								placeholder="Description"
+								required
+							/>
+							<!-- link -->
+							<!-- <label for="link">link : </label> -->
+							<input
+								type="url"
+								name="link"
+								id="link"
+								placeholder="Link"
+								required
+							/>
+							<!-- image -->
+							<label for="poster"> Upload an image </label>
+							<input
+								type="file"
+								name="poster"
+								id="poster"
+								required
+							/>
+							<!--  -->
+							<input type="submit" />
+						</form>
+					</div>
+				</div>
+				<!-- <div class="card">
+					<div class="photo">
+						<img src="./003.jpg" alt="photo" />
+					</div>
+					<div class="info">
+						<div class="title">title</div>
+						<hr />
+						<div class="desc">description</div>
+						<div class="actions">
+						<a href="#" class="btn delete">delete</a>
+						<a href="#" class="btn download">download</a>
+						</div>
+					</div>
+				</div> -->
+
+				
+				<% 
+                let postss = posts.reverse();
+                postss.forEach(function(post){%>
+                     <% if(post.isDownloaded){%>
+		        <div class="card" data-id="<%= post._id%>">
+            <%} else{%>
+                <div class="card red" data-id="<%= post._id%>">
+            <%}%>
+				<!-- <div class="card" data-id="<%= post._id%>"> -->
+					<div class="photo">
+						<img
+							src="/uploads/posters/<%= post.poster%>"
+							alt="photo"
+						/>
+					</div>
+					<div class="info">
+						<div class="title"><%= post.title %></div>
+						<hr />
+						<div class="desc"><%=post.description %></div>
+						<div class="actions">
+						</div>
+					</div>
+				</div>
+				<%}) %>
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/login.css" />
+		<title>Login/Signup</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="options">
+				<div class="option login">
+					<h2>Log in</h2>
+					<form action="user-login" method="POST">
+						<!-- username -->
+						<div>
+							<label for="username">username : </label>
+							<input
+								type="text"
+								name="username"
+								id="username"
+								required
+							/>
+						</div>
+						<!-- password -->
+						<div>
+							<label for="password">password : </label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								required
+							/>
+						</div>
+						<!--  -->
+						<input type="submit" />
+					</form>
+				</div>
+
+				<div class="option signup">
+					<h2>Sign up</h2>
+					<form action="user-signup" method="POST">
+						<!-- name -->
+						<div>
+							<label for="name">name : </label>
+							<input type="text" name="name" id="name" required />
+						</div>
+						<!-- username -->
+						<div>
+							<label for="username">username : </label>
+							<input
+								type="text"
+								name="username"
+								id="username"
+								required
+							/>
+						</div>
+						<!-- password -->
+						<div>
+							<label for="password">password : </label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								required
+							/>
+						</div>
+						<!--  -->
+						<input type="submit" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

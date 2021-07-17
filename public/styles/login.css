@@ -1,0 +1,119 @@
+@font-face {
+	font-family: "itim";
+	src: url("./../font/Itim-Regular.ttf");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	/* border: 1px solid #555555; */
+	transition: transform 0.5s ease-in-out;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-image: url(); */
+	color: rgb(223, 206, 206);
+	font-family: itim;
+}
+
+.container {
+	height: 90vh;
+	width: 90%;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("./files/login-background.png");
+	background-size: cover;
+	position: relative;
+	bottom: 20px;
+	box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.options {
+	width: 800px;
+	height: 350px;
+	display: flex;
+	/* flex-wrap: wrap; */
+}
+
+.option {
+	padding: 20px;
+    margin: 5px;
+	/* flex: 1; */
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.747);
+	/* box-shadow: 4px,6px,5px,rgba(0, 555, 0, 0.747); */
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	/* text-align: center; */
+	align-items: center;
+	position: relative;
+	width: 390px;
+}
+
+.option:hover {
+	z-index: 5;
+}
+
+.option label {
+	width: 100px;
+	display: inline-block;
+	font-size: larger;
+}
+.option h2 {
+	text-align: center;
+	margin: 40px;
+	font-size: xx-large;
+}
+
+.option form {
+	font-size: 100%;
+	/* position:  relative ; */
+}
+
+.option form > div {
+	margin-bottom: 15px;
+	/* background-color: #fff; */
+}
+
+.option form input {
+	font-family: inherit;
+	color: inherit;
+}
+
+.option form input[type="text"],
+.option form input[type="password"] {
+	border: none;
+	border-radius: 3px;
+	height: 20px;
+	background-color: rgb(24, 24, 24);
+	font-size: larger;
+	width: 200px;
+}
+
+.option form input[type="submit"] {
+	/* background-color: lightb; */
+	padding: 10px;
+	font-size: large;
+	border: none;
+	position: absolute;
+	bottom: 30px;
+	border-radius: 5px;
+	color: rgb(61, 61, 61);
+}
+
+.login:hover {
+	/* transform: scale(1.2, 1.2); */
+	transform: translateX(40px) scale(1.2, 1.2);
+}
+
+.signup:hover {
+	/* transform: scale(1.2, 1.2); */
+	transform: translateX(-40px) scale(1.2, 1.2);
+}

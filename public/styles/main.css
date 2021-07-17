@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'itim';
+    src: url('./files/Itim-Regular.ttf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+    /* border: 1px dotted #555555; */
+}
+
+body{
+    font-family: 'itim';
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+a:hover {
+    opacity: 70%;
+}
+
+.container{
+    margin: auto;
+    width: 1000px;
+    /* margin-top: 80px; */
+    /* border: 5px solid black; */
+}
+
+a.btn{
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 7px 18px;
+    background-color: rgb(44, 99, 252);
+    color: white;
+    margin: 10px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    height: 80px;
+    background-color: rgb(238, 99, 6);
+    color: white;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 3px 1px 15px gray;
+    align-items: center;
+    z-index: 5;
+}
+
+.header>div{
+    flex: 1;
+}
+
+.header .logo{
+    /* padding-left: 5px; */
+    position: relative;
+    top: 10px;
+}
+
+.header .logo a:hover{
+    opacity: 100%;
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+}
+
+.header .profile .photo img{
+    height: 60px;
+    width: 60px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+.header .profile .user {
+    padding-left: 10px;
+}
+
+.header .profile .user a{
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+.header .profile .user sub a {
+    font-size: medium;
+}
+
+.header .search{
+    flex: 2;
+}
+
+.header .search form input[type="text"]{
+    font-family: inherit;
+    height: 40px;
+    width: 350px;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-left: 150px;    
+    font-size: larger;
+}
+
+.body{
+    margin-top: 100px;
+}
+
+.body .card{
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    border: 2px dotted rgba(238, 99, 6, 0.658);
+    border-radius: 20px;
+}
+
+.body .card>div{
+    flex: 1;
+}
+
+.body .card .photo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    height: 400px;
+}
+
+.body .card .photo img{
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.body .card .info{
+    padding: 15px;
+    position: relative;
+}
+
+.body .info .title{
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+.body .info .desc{
+    font-size: large;
+    margin-top: 10px;
+}
+
+.body .info .actions{
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+}
+
+.body .info .actions .btn.delete{
+    background-color:rgb(248, 54, 54);
+}
+
+

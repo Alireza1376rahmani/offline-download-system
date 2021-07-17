@@ -1,0 +1,82 @@
+input {
+	font-family: inherit;
+}
+
+.body .card .photo {
+	height: 200px;
+	flex: 1;
+}
+
+.body .card .info {
+	flex: 3;
+}
+
+.forms{
+    display: flex;
+}
+
+.form {
+	padding: 30px;
+	border: 2px solid rgba(238, 99, 6, 0.596);
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.new-post-form{
+    flex: 3;
+}
+
+.change-profile-form{
+    flex: 1;
+}
+
+.form h2 {
+	margin-bottom: 20px;
+}
+
+.form input {
+	display: block;
+	margin: 10px 0;
+	height: 40px;
+	border-radius: 10px;
+	padding: 2px;
+	font-size: larger;
+}
+
+.form input[type="text"],
+.form input[type="url"] {
+	width: 500px;
+	border: none;
+	box-shadow: 2px 4px 3px rgba(70, 70, 70, 0.342);
+}
+
+.form input[type="submit"] {
+	padding: 5px 15px;
+	border: none;
+	box-shadow: 2px 4px 3px rgba(70, 70, 70, 0.342);
+}
+
+.form form label {
+	border: 1px solid rgb(238, 99, 6);
+	border-radius: 10px;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+	box-shadow: 2px 4px 3px rgba(70, 70, 70, 0.342);
+}
+
+.form form input[type="file"] {
+	display: none;
+	/* opacity: 0; */
+	width: 50px;
+	content: "hi";
+}
+
+
+.card {
+    background-color: rgba(2, 255, 57, 0.301);
+}
+
+.card.red{
+    background-color: rgba(255, 2, 2, 0.301);
+}
